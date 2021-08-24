@@ -37,7 +37,7 @@ fooData((elpasedTime) => {
     console.log('callback anonyme temps :', elpasedTime, 'ms \n');
 
 });
-console.log('fooData a appelée avec un callback anonyme \n');
+console.log('fooData a été appelée avec un callback anonyme \n');
 
 //--------------------------------------------------------
 //--------------------------------------------------------

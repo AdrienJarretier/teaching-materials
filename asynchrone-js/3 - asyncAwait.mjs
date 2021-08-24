@@ -12,6 +12,9 @@ console.log();
 // simple asynchrone, une procédure s'exécute
 
 // affichera le temps écoulée entre le début du timeout et l'appel de la fonction
+// et retourne la valeur
+//
+// On note l'utilisation des mots clés async et await
 async function timedOutHandler() {
 
     console.log('timedOutHandler a été appelée');
@@ -29,26 +32,26 @@ async function timedOutHandler() {
 timedOutHandler();
 
 
+//-------------------------- !!!!!!!!! ------------------------------
+// Ici timedOutHandler ne retourne pas explicitment une promise
+//      (voir 0 - dataFunctions.js / promise_fooData)
+// mais async est un sucre syntaxique qui fabrique une Promise
+//-------------------------------------------------------------------
+// On peut donc utiliser .then
 
+timedOutHandler()
+    .then((elapsedTime) => {
 
+        console.log('---------timedOutHandler returned---------');
+        console.log('ca marche avec then ! temps :', elapsedTime, 'ms \n');
 
+    });
+console.log('timedOutHandler a été appelé avec une syntaxe promise-like \n');
 
-// //-------------------------- !!!!!!!!! ------------------------------
-// //--------------------------------------------------------
-// // Avec un callback anonyme ca donne ca
-
-// promise_fooData()
-//     .then((elpasedTime) => {
-
-//         console.log('---------promise_fooData - anonymous---------');
-//         console.log('callback anonyme temps :', elpasedTime, 'ms \n');
-
-//     });
-// console.log('promise_fooData a appelée avec un callback anonyme \n');
-
-// //--------------------------------------------------------
-// //--------------------------------------------------------
-// //                      Exercice
-// // maintenant on voudrait faire un traitement avec
-// // async_fooData ET async_fooRandData
-// // par exemple, afficher les 2 et afficher leur produit
+//--------------------------------------------------------
+//--------------------------------------------------------
+//                      Exercice
+// maintenant on voudrait faire un traitement avec
+// promise_fooData ET promise_fooRandData
+// par exemple, afficher les 2 et afficher leur produit
+// avec la syntaxe async / await

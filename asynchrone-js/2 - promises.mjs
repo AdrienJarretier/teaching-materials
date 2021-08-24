@@ -37,7 +37,7 @@ promise_fooData()
         console.log('callback anonyme temps :', elapsedTime, 'ms \n');
 
     });
-console.log('promise_fooData a appelée avec un callback anonyme \n');
+console.log('promise_fooData a été appelée avec la syntaxe des promises \n');
 
 //--------------------------------------------------------
 //--------------------------------------------------------
