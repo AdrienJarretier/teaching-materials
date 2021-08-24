@@ -10,26 +10,59 @@ function randInt(a, b) {
 // donc ces fonctions prennent en parametre un callback
 // aussi appelé handler, qui tratera les données quand elles seront dispo
 
-export default {
+const functions = {
+
+    _timedCall(callback) {
+        setTimeout(callback, randInt(600, 1700));
+    },
+
+    /**
+     * @param callback will receive an argument timeElapsed,
+     * the time it took for the function to call that callback
+     */
     fooData(callback) {
 
         let start = new Date();
-        setTimeout(() => {
+        functions._timedCall(() => {
 
             let end = new Date();
             callback(end - start);
-        }, randInt(600, 1500));
+        });
 
     },
+
+    /**
+     * @param callback will receive an argument value,
+     * a random integer between 1 and 10
+     */
     fooRandData(callback) {
 
-        setTimeout(() => {
+        functions._timedCall(() => {
 
             callback(randInt(1, 10));
-        }, randInt(600, 1500));
+        });
+
+    },
+
+    // The 2 following functions will de the same things but using promises
+    promise_fooData() {
+
+        return new Promise((resolve, reject) => {
+
+            functions.fooData(resolve);
+
+        });
+
+    },
+    promise_fooRandData() {
+
+        return new Promise((resolve, reject) => {
+
+            functions.fooRandData(resolve);
+
+        });
 
     }
 };
 
-// ----------------------------------------------------
-// --------------------- Promises ---------------------
+export default functions;
