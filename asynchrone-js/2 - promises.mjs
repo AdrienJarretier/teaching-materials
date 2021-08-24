@@ -46,3 +46,4 @@ console.log('promise_fooData a appelée avec un callback anonyme \n');
 // maintenant on voudrait faire un traitement avec
 // promise_fooData ET promise_fooRandData
 // par exemple, afficher les 2 et afficher leur produit
+// voir Promise.all()
