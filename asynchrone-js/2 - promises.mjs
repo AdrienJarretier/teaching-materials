@@ -12,12 +12,11 @@ console.log();
 // simple asynchrone, une procédure s'exécute
 
 // affichera le temps écoulée entre le début du timeout et l'appel de la fonction
-function timedOutHandler(elpasedTIme) {
+function timedOutHandler(elapsedTime) {
 
     console.log('---------promise_fooData - timedOutHandler---------');
     console.log('le temps imparti est écoulé');
-    console.log('temps :', elpasedTIme, 'ms \n');
-
+    console.log('temps :', elapsedTime, 'ms \n');
 }
 
 // quand fooData fourni les données (on sait pas quand),
@@ -32,10 +31,10 @@ console.log('promise_fooData a été appelée');
 // Avec un callback anonyme ca donne ca
 
 promise_fooData()
-    .then((elpasedTime) => {
+    .then((elapsedTime) => {
 
         console.log('---------promise_fooData - anonymous---------');
-        console.log('callback anonyme temps :', elpasedTime, 'ms \n');
+        console.log('callback anonyme temps :', elapsedTime, 'ms \n');
 
     });
 console.log('promise_fooData a appelée avec un callback anonyme \n');
