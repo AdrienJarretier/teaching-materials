@@ -1,6 +1,6 @@
 from math import pi
 from areaSampling import areaSampling
-from trianglesApprox import circumApprox, triangleApprox
+from circlePointsApprox import circumApprox, triangleApprox
 
 
 LOOPS = 400000
