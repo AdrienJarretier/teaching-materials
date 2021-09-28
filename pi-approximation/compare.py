@@ -1,6 +1,7 @@
 from math import pi
 from areaSampling import areaSampling
-from circlePointsApprox import circumApprox, triangleApprox
+from circumApprox import circumApprox
+from trianglesApprox import trianglesApprox
 
 
 LOOPS = 400000
@@ -9,7 +10,7 @@ print('areaSampling :')
 areaSampling(LOOPS)
 
 print('triangleApprox :')
-triangleApprox(LOOPS)
+trianglesApprox(LOOPS)
 print('circumApprox :')
 circumApprox(LOOPS)
 
